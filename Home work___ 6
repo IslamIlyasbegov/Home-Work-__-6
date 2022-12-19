@@ -1,0 +1,122 @@
+// Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// [345, 897, 568, 234] -> 2
+
+
+int main(void) 
+
+	{ 
+		const unsigned short length = 0;
+		unsigned short x = 0, even = 0, odd = 0;  // even - четный, odd - нечетный 
+		
+		 printf("Enter the number of properties: ");
+	}
+	
+		if(scanf("%hu", &length) == EOF) 
+		
+			{
+				puts("\nError while entering numbers!\n");
+				exit(EXIT_FAILURE);
+			}
+
+			unsigned short arr[length];
+
+		while(x < length) arr[x++] = rand() % 10;
+
+		puts("\n= = = = = Output = = = = =\n");
+
+		for(x = 0; x < length; x++ ) 
+	
+	{
+        printf("%4hu%c", arr[x], (x % 10 == 9 || x == length-1) ? '\n' : ' ' );
+
+        (!(arr[x] % 2 || arr[x] == 0)) ? even++ : odd++;
+    }
+
+		printf("\nall number: %hu, even: %hu, odd: %hu\n", length, even, odd);
+
+		return 0;
+}
+
+
+// Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+// [3, 7, 23, 12] -> 19
+
+// [-4, -6, 89, 6] -> 0
+
+using System;
+using System.Linq;
+ 
+namespace TestApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var rnd = new Random();
+            var arr = new int[1];
+ 
+            for (int i = 0; i < arr.Length; i++)
+                Console.Write("{0}\t", arr[i] = rnd.Next(-100, 100));
+				Console.WriteLine();
+ 
+            var even = arr.Where((element, index) => index % 2 != 0);
+            var odd = arr.Where((element, index) => index % 2 == 0);
+ 
+            Console.WriteLine("Чётные. Количество: {0}. Сумма: {1}.", even.Count(), even.Sum());
+            Console.WriteLine("Нечётные. Количество: {0}. Сумма: {1}.", odd.Count(), odd.Sum());
+ 
+            Console.ReadKey();
+        }
+    }
+}
+
+
+
+// Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+
+int a, i, n, sum = 0, sumo = 0; 
+           
+		   int[] m = new int[100];
+ 
+            Random rand = new Random();
+            n = 11;
+            Console.WriteLine("Исходный массив");
+            for (i = 0; i < n; i++)
+            {
+                m[i] = rand.Next(0, 50);
+                Console.Write(m[i] + " ");
+            }
+ 
+            var min = m[0];
+            var max = m[0];
+ 
+            for (i = 0; i < n; i++)
+            {
+                if (m[i] < min)
+                {
+                    min = m[i];
+                }
+                else if (m[i] > max)
+                {
+                    max = m[i];
+                }
+            }
+            Console.WriteLine("\nМинимальный элемент: " + min);
+            Console.WriteLine("Максимальный элемент: " + max);
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(m[i] + " ");
+            }
+            Console.ReadKey();
+        }
+    }
+ 
+}
+
+
+// подставлять значения не стал, написал просто кодик .
+
